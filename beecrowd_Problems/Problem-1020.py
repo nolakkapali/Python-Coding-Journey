@@ -15,3 +15,11 @@
 
 # Output
 # Print the output, like the following example.
+N=int(input())
+year=N//365
+print(f"{year} ano(s)")
+month=(N%365)//30
+print(f"{month} mes(es)")
+day=(N%365)%30
+print(f"{day} dia(s)")
+#print(30%365)

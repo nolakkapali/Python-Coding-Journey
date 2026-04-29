@@ -5,3 +5,15 @@
 
 # Output
 # Print the minimum quantity of banknotes and coins necessary to change the initial value, as the given example.
+N=float(input()) #576.73
+notes=[100, 50, 20, 10, 5, 2]
+coins=[1, 0.50, 0.25, 0.10, 0.05, 0.01]
+for i in notes:
+    taka=N//i
+    N=N%i
+    print(f"{int(taka)} nota (s) de R$ {i:.2f}")
+
+for j in coins:
+    paisa=N//j
+    N=N%j
+    print(f"{int(paisa)} moeda (s) de R$ {j}")
