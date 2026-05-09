@@ -37,3 +37,14 @@ a.append(b)# direct list ta eshe boshe jai ekta index e
 a.extend(b)# b er itemgula individually a te add hoi
 print(a)
 print(a)
+developer = ['Alice', 34, 'Rust Developer']
+name, *rest = developer
+print(name) # 'Alice'
+print(rest) # [34, 'Rust Developer']
+# declare list
+a=[1,2,3,4]
+print(a)
+b=list()
+print(b)
+c=list(("app","web","flutter"))
+print(c)
