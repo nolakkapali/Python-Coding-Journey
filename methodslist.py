@@ -60,3 +60,8 @@ print(num6)
 num7=[1,2,3,675,657]
 num7.extend(num6)
 print(num7)
+#indexing
+color=["yellow","green","yellow","cirulian blue","white","black","turquoise","cirulian blue"]
+print(color.index("cirulian blue",2,6))#it returns the index number and the first occurence
+#count
+print(color.count("yellow"))#it return the counting value
