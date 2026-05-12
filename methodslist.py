@@ -65,3 +65,21 @@ color=["yellow","green","yellow","cirulian blue","white","black","turquoise","ci
 print(color.index("cirulian blue",2,6))#it returns the index number and the first occurence
 #count
 print(color.count("yellow"))#it return the counting value
+# fruits = ["watermelon", "apple", "banana", "kiwi", "cherry"]
+# fruits.sort(key=len(str))
+# print(fruits)
+items = ["pen", "notebook", "eraser"]
+items.append("pencil")
+items.insert(2,"ruler")
+print(items)
+varb=items.pop(0)
+print(items)
+print(varb)
+items.reverse()
+print(items)
+
+train = ["Engine", "AC-1", "Sleeper-1", "General-1", "Sleeper-2"]
+target=train.index("General-1")
+if train[target+1]=="Sleeper-2":
+    train.insert(target+1,"AC-2")
+print(train)
