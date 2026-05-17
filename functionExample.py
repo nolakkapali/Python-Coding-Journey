@@ -19,3 +19,8 @@
 def fruits(weight,name="apple", color="red"):#jaar jonno weight age e boshe ekane
    print("these are",name,"weight=",weight,"color is=",color)
 fruits(23,color="yellow")
+
+def my_function(name,age=34):
+  print("Hello",name,",","age of",age)
+
+my_function(name = "Emil")
