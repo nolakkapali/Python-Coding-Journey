@@ -24,3 +24,8 @@ def my_function(name,age=34):
   print("Hello",name,",","age of",age)
 
 my_function(name = "Emil")
+
+def my_function(fname, lname):
+  print(fname + " " + lname)
+
+my_function("Emil", "Refsnes")
