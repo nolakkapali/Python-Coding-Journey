@@ -29,3 +29,31 @@ def my_function(fname, lname):
   print(fname + " " + lname)
 
 my_function("Emil", "Refsnes")
+
+#list as functional argument
+def my_function(fruits):
+  for fruit in fruits:
+    print(fruit)
+
+my_fruits = ["apple", "banana", "cherry"]
+my_function(my_fruits)
+
+#list as return value
+def my_function():
+  return ["apple", "banana", "cherry"]
+
+fruits = my_function()
+print(fruits[0])
+print(fruits[1])
+print(fruits[2])
+
+
+def display_car(vehicle):
+  print(vehicle)
+  return ["mercedez"]
+cars=["lambourghini","porche","bmw"]
+new_cars=display_car(cars)
+print(new_cars)
+print(cars)
+print(type(new_cars))
+print(type(cars))
