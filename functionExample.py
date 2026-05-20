@@ -57,3 +57,9 @@ print(new_cars)
 print(cars)
 print(type(new_cars))
 print(type(cars))
+#return value in function
+def my_function(x, y):
+  return x + y
+
+result = my_function(5, 3)
+print(result)
