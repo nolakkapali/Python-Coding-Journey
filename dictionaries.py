@@ -1,0 +1,19 @@
+#saree name
+saree=dict(name="kanjivaram",product_code=1234,price=53334)
+price={}
+print(saree)
+print(type(saree))
+print(type(price))
+price["saree"]=345224
+price["rate"]=23
+price["color"]="red"
+print(price)
+price["color1"]="green"
+print(price)
+price["color"]="green"
+print(price)
+price["color"]="green"
+print(price)
+print(len(price))
+price["color"]="red"
+print(price)
