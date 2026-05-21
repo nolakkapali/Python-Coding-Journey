@@ -63,3 +63,21 @@ def my_function(x, y):
 
 result = my_function(5, 3)
 print(result)
+
+#positional only argument expected by ,/
+def my_name(name,age,/):
+  print("hello",name,age)
+my_name("ella,","Combodia")
+#my_name(name="ira","Nepal") #just only accepts positional argument cuz of ,/
+#combining positional and keyword argument only
+def my_function(a, b, /, *, c, d):
+  return a + b + c + d
+
+result = my_function(5, 10, c = 15, d = 20)
+print(result)
+
+#only keyword argument
+def my_name(*,name,city):
+  print("Hello",name,city)
+my_name(name="aditi",city="Uphill")
+#my_name("aditi",city="Uphill") #only keyword argument is passed not positional argument
