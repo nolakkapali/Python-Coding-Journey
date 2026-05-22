@@ -17,3 +17,9 @@ print(price)
 print(len(price))
 price["color"]="red"
 print(price)
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
