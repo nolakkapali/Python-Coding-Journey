@@ -23,3 +23,5 @@ thisdict = {
   "year": 1964
 }
 print(thisdict)
+thisdict["brand"]="Volvo"
+print(thisdict)
