@@ -25,3 +25,5 @@ thisdict = {
 print(thisdict)
 thisdict["brand"]="Volvo"
 print(thisdict)
+x=thisdict["model"]
+print(x)
