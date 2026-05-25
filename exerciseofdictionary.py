@@ -58,3 +58,18 @@ mydict=dict(thisdict)
 print(mydict)
 mydict1=thisdict.copy()
 print("Mydict1:",mydict1)
+for x in mydict1:
+    print(x,mydict[x])
+for x in mydict1.keys():
+    print(x)
+for x in mydict1.values():
+    print(x)
+for x,y in mydict1.items():
+    print(x,y)
+print(mydict1.pop("color",0))# will give a default value
+print(mydict1.get("brand",0))#will give the default value if no value is found
+print(mydict1)
+library={"book1":{"name":"A","author":"B"},
+         "book2":{"name":"C","author":"D"}}
+print(type(library))
+print(library)
