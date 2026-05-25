@@ -40,3 +40,21 @@ print(thisdict.items())
 #update
 thisdict.update({"year":2028})
 print(thisdict)
+thisdict.update({"date":"23-4-2026"})
+print(thisdict)
+print(thisdict.pop("color"))
+print(thisdict.popitem())
+del thisdict ["brand"]
+thisdict.clear()
+print(thisdict)
+del thisdict
+# print(thisdict)
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict=dict(thisdict)
+print(mydict)
+mydict1=thisdict.copy()
+print("Mydict1:",mydict1)
