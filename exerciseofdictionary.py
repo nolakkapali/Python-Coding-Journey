@@ -27,3 +27,16 @@ thisdict["brand"]="Volvo"
 print(thisdict)
 x=thisdict["model"]
 print(x)
+print(thisdict.get("model"))
+print(thisdict.keys())
+print(thisdict.values())
+print(thisdict.items())
+if "model" in thisdict:
+    print("Yes")
+thisdict["color"]="red"
+print(thisdict.keys())
+print(thisdict.values())
+print(thisdict.items())
+#update
+thisdict.update({"year":2028})
+print(thisdict)
