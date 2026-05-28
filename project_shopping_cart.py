@@ -9,6 +9,10 @@ shopping_cart={"UserID":11,"Quantity":4,
 #add product to cart
 def add_to_cart(productID,Quantity):
     if productID in product_catalog:
+        print (product_catalog.get(productID,0))# to check if the product already exists
+        shopping_cart.update(Quantity)
+    else:
+
 
 
 add_to_cart(product_catalog["product1"],shopping_cart["Quantity"])
