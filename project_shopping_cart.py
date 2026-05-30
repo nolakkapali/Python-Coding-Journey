@@ -28,5 +28,11 @@ def add_to_cart(productID,Quantity):
         print("Sorry! No Result!!!")
 
 
+def remove_from_cart(productID):
+    if productID in shopping_cart:
+        del shopping_cart[productID]
+        print(shopping_cart)
 print("Welcome to shopping cart!")
 add_to_cart(1223,1)
+print(shopping_cart)
+remove_from_cart(1234)
