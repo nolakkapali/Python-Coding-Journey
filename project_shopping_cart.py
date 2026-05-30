@@ -32,7 +32,19 @@ def remove_from_cart(productID):
     if productID in shopping_cart:
         del shopping_cart[productID]
         print(shopping_cart)
-print("Welcome to shopping cart!")
+
+print("=============================================")
+print("           Welcome to Shopping Cart!")
+print("=============================================\n")
+print("[1] View Product Catalog\n[2] Add Product to Cart\n[3] View Shopping Cart & Total\n[4] Update Product Quantity in Cart\n[5] Remove Product from Cart\n[0] Exit")
+choice=input("===========================================\nEnter Your Choice (0-5):")
+if choice==0:
+elif choice==1:
+    add_to_cart
+elif choice==2:
+elif choice==3:
+elif choice==4:
+elif choice ==5:
 add_to_cart(1223,1)
 print(shopping_cart)
 remove_from_cart(1234)
