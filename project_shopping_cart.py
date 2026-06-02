@@ -6,6 +6,16 @@ product_catalog={1234:{"name":"book","price":234},
 
 shopping_cart={1234:11,1223:4}#product id is key and quantity is value
 
+def view_product_catalog():
+    print("=============Product Catalog=====================")
+    # for j in range(1,10):
+    for i in product_catalog:
+            print("\nProduct ID:",i)
+    # for k in product_catalog.values():
+            print("Product Name:",product_catalog[i]["name"])
+            print("Price:",product_catalog[i]["price"])
+
+
 #add product to cart
 #what does this function do:
 #check first if the product is available in the product list
@@ -28,7 +38,7 @@ def add_to_cart(productID,Quantity):
         print("Sorry! No Result!!!")
 
 
-def remove_from_cart(productID):
+def view_shopping_cart(productID):
     if productID in shopping_cart:
         del shopping_cart[productID]
         print(shopping_cart)
@@ -36,23 +46,30 @@ def remove_from_cart(productID):
 def update_quantity():
     print("which product quantity do you want to change:")
 
+def remove_from_cart(productID):
+    if productID in shopping_cart:
+        del shopping_cart[productID]
+        print(shopping_cart)
 
 
-print("=============================================")
-print("           Welcome to Shopping Cart!")
-print("=============================================\n")
-print("[1] View Product Catalog\n[2] Add Product to Cart\n[3] View Shopping Cart & Total\n[4] Update Product Quantity in Cart\n[5] Remove Product from Cart\n[0] Exit")
-choice=int(input("===========================================\nEnter Your Choice (0-5):"))
+while True:
+    print("=============================================")
+    print("           Welcome to Shopping Cart!")
+    print("=============================================\n")
+    print("[1] View Product Catalog\n[2] Add Product to Cart\n[3] View Shopping Cart & Total\n[4] Update Product Quantity in Cart\n[5] Remove Product from Cart\n[0] Exit")
+    choice=int(input("===========================================\nEnter Your Choice (0-5):"))
 
-if choice==0:
+    if choice==0:
+        break
+    elif choice==1:
+        view_product_catalog()
+    elif choice==2:
+        add_to_cart(1223,3)
+    elif choice==3:
+        view_shopping_cart()
+    elif choice==4:
+        update_quantity()
+    elif choice ==5:
+        remove_from_cart(1234)
 
-elif choice==1:
-    add_to_cart(1223,3)
-elif choice==2:
-elif choice==3:
-elif choice==4:
-elif choice ==5:
 
-print(shopping_cart)
-remove_from_cart(1234)
-update_quantity()
