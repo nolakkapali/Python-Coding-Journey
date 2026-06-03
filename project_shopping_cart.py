@@ -6,14 +6,16 @@ product_catalog={1234:{"name":"book","price":234},
 
 shopping_cart={1234:11,1223:4}#product id is key and quantity is value
 
+
 def view_product_catalog():
     print("=============Product Catalog=====================")
-    # for j in range(1,10):
-    for i in product_catalog:
+    count=1
+    for i,j in product_catalog.items():
+            print(f"Product{count} Information")
             print("\nProduct ID:",i)
-    # for k in product_catalog.values():
-            print("Product Name:",product_catalog[i]["name"])
-            print("Price:",product_catalog[i]["price"])
+            print(product_catalog[i])
+            for k in j:
+                print("Product Name:",k,"\nPrice:",j[k])
 
 
 #add product to cart
