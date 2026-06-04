@@ -8,14 +8,14 @@ shopping_cart={1234:11,1223:4}#product id is key and quantity is value
 
 
 def view_product_catalog():
-    print("=============Product Catalog=====================")
+    print("\n=============Product Catalog=====================")
     count=1
     for i,j in product_catalog.items():
-            print(f"Product{count} Information")
+            print(f"\nProduct{count} Information")
             print("\nProduct ID:",i)
-            print(product_catalog[i])
             for k in j:
-                print("Product Name:",k,"\nPrice:",j[k])
+                print("Product",k,":",j[k])
+                count=count+1
 
 
 #add product to cart
@@ -40,10 +40,20 @@ def add_to_cart(productID,Quantity):
         print("Sorry! No Result!!!")
 
 
-def view_shopping_cart(productID):
-    if productID in shopping_cart:
-        del shopping_cart[productID]
-        print(shopping_cart)
+def view_shopping_cart():
+    print("\n===============Shopping Cart=================")
+    sum=0
+    for i in shopping_cart:
+        print("Product ID:",i,"\nProduct Quantity:",shopping_cart[i])
+        for j,k in product_catalog.items():
+            if i==j:
+                print("Product Name:",k["name"],"\nUnit Price:",k["price"])
+                total=k["price"]*shopping_cart[i]
+                print(f"Total Price of {k["name"]}:{total}\n")
+        sum=sum+total
+    print("Final Total Price of All the Added Product:",sum)
+
+
 
 def update_quantity():
     print("which product quantity do you want to change:")
@@ -55,7 +65,7 @@ def remove_from_cart(productID):
 
 
 while True:
-    print("=============================================")
+    print("\n=============================================")
     print("           Welcome to Shopping Cart!")
     print("=============================================\n")
     print("[1] View Product Catalog\n[2] Add Product to Cart\n[3] View Shopping Cart & Total\n[4] Update Product Quantity in Cart\n[5] Remove Product from Cart\n[0] Exit")
