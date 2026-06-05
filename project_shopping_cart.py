@@ -56,7 +56,8 @@ def view_shopping_cart():
 
 
 def update_quantity():
-    print("which product quantity do you want to change:")
+    print("which product ID's quantity do you want to change:")
+    product_quantity=int(input("Enter Quantity:"))
 
 def remove_from_cart(productID):
     if productID in shopping_cart:
