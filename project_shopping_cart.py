@@ -54,11 +54,18 @@ def view_shopping_cart():
     print("Final Total Price of All the Added Product:",sum)
 
 
-
+#update the quantity of the product
+#changes total price and indivisual summation of price when quantity changes
 def update_quantity():
-    print("which product ID's quantity do you want to change:")
-    product_quantity=int(input("Enter Quantity:"))
-
+    view_shopping_cart()
+    ID=int(input("which product ID's quantity do you want to change:"))
+    if ID in shopping_cart:
+        product_quantity=int(input("Enter Quantity:"))
+        for i in shopping_cart:
+            ID=
+        shopping_cart
+    else:
+        print("Sorry Product not available in cart!!")
 def remove_from_cart(productID):
     if productID in shopping_cart:
         del shopping_cart[productID]
