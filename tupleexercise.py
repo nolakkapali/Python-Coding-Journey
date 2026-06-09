@@ -1,11 +1,10 @@
 thistuple = ("apple", "banana", "cherry")
 print(thistuple)
-My name is 'Riya'
-I eat OmuRice."OmuRice is Love"
-True
-False
-17
-31
-
-
-a v
+createtuple=tuple((1,2,3,4,"a","bhjbkd",6))
+print(type(createtuple))
+print(len(createtuple))
+print(createtuple)
+print(createtuple[2])
+print(createtuple[4:7])
+print(createtuple[-5:-2])
+print(createtuple[-3:-1])
