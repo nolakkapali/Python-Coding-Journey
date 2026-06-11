@@ -20,5 +20,9 @@ c=tuple(b)
 print(a)
 print(c)
 #adding tuples
-
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.append("orange")
+thistuple = tuple(y)
+print(y)
 #deleting tuples
