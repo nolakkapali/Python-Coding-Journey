@@ -26,3 +26,18 @@ y.append("orange")
 thistuple = tuple(y)
 print(y)
 #deleting tuples
+fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
+
+(green, *tropic, red) = fruits
+
+print(green)
+print(tropic)
+print(red)
+#remove tuple
+dt=("apple","orange","hvj")
+ky=list(dt)
+ky.remove("hvj")
+print(ky)
+dt=tuple(ky)
+print(dt)
+del dt #deletes the tuple entirely
