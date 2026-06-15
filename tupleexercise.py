@@ -41,3 +41,9 @@ print(ky)
 dt=tuple(ky)
 print(dt)
 del dt #deletes the tuple entirely
+#adding tuple to a tuple
+thistuple = ("apple", "banana", "cherry")
+y = ("orange",)
+thistuple += y
+
+print(thistuple)
