@@ -75,3 +75,16 @@ print(thistuple)
 thistuple=thistuple * 3
 print(thistuple)
 print(len(thistuple))
+
+#tuple loop
+for i in thistuple:
+    print(i)
+
+i=0
+while i<len(thistuple):
+    print(thistuple[i])
+    i=i+1
+
+for i in range(len(thistuple)):
+    print("333333333")
+    print(thistuple[i])
