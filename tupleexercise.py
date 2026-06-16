@@ -25,14 +25,17 @@ y = list(thistuple)
 y.append("orange")
 thistuple = tuple(y)
 print(y)
+y.remove("orange")
+thistuple=tuple(y)
+print(thistuple)
+y[1]="chia seeds"
+print(y)
+thistuple=tuple(y)
+print(thistuple)
+x=("kiwi",)#shudu 1 ta item thkle comma dewa lage shes e but 1 er beshi item thkle lage na
+thistuple=thistuple+x
+print(thistuple)
 #deleting tuples
-fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
-
-(green, *tropic, red) = fruits
-
-print(green)
-print(tropic)
-print(red)
 #remove tuple
 dt=("apple","orange","hvj")
 ky=list(dt)
@@ -45,5 +48,30 @@ del dt #deletes the tuple entirely
 thistuple = ("apple", "banana", "cherry")
 y = ("orange",)
 thistuple += y
-
 print(thistuple)
+
+#packing a tuple means normally assigning value to it
+num=(1,2,3,4,5,6)
+print("num:",num)
+#unpacking a tuple means when values are extracted back into a variable
+(one,two,three,four,five,six)=num
+print(one)
+print(two)
+print(three)
+print(four)
+print(five)
+print(six)
+print(num)
+#using asterisk *- ekane ei * ta jei variable er pashe thake oi
+#variable ta ekta list e baki value gula niye nei
+
+flower=("rose","jinilia","jasmine","lily","night queen","tulip","lotus")
+(a,b,c,*d,e,f)=flower
+print(d)
+print(e)
+print(f)
+thistuple=thistuple+flower
+print(thistuple)
+thistuple=thistuple * 3
+print(thistuple)
+print(len(thistuple))
