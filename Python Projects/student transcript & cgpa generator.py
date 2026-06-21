@@ -21,7 +21,7 @@ def add_semester_record(subject,semester):
 
 #2)Calculate semester gpa
 def calculate_semester_gpa(subject,semester):
-    # if option 1 is already clicked then
+    # if option 1 is already clicked and the semster record and course tuples are empty
     if course_tuple is None and semester_record is None:
         updated_sub,updated_sem=add_semester_record(subject,semester)
         sum=0
