@@ -20,23 +20,41 @@ def add_semester_record(subject,semester):
     return subject,semester
 
 #2)Calculate semester gpa
-def calculate_semester_cgpa(subject,semester):
-    add_semester_record(subject,semester)
-    #tuple unpacking
-    sum=0
-    total_credit=0
+def calculate_semester_gpa(subject,semester):
+    # if option 1 is already clicked then
+    if course_tuple is None and semester_record is None:
+        updated_sub,updated_sem=add_semester_record(subject,semester)
+        sum=0
+        total_credit=0
 #Courses are: ('121', 'dg', 3.0, 4.0, '213', 'dgd', 3.0, 4.0)
 #Semester Record: (1, ('121', 'dg', 3.0, 4.0, '213', 'dgd', 3.0, 4.0))
-    for i in semester:
-        (course_code,course_name,course_credit,course_grade_point)=subject[2::]
-        print(subject[course_code],subject[course_name])
-        credits_gpa= subject[course_credit]*subject[course_grade_point]
-        sum=sum+credits_gpa
-        total_credit=total_credit+subject[course_credit]
-    print("Semester GPA:",sum/total_credit)
+        for i in range(0,len(updated_sub),4):
+            print("loop started")
+            print(updated_sub[i:i+4])
+            (course_code,course_name,course_credit,course_grade_point)=updated_sub[i:i+4]
+            print(course_code,course_name)
+            credits_gpa= course_credit*course_grade_point
+            sum=sum+credits_gpa
+            total_credit=total_credit+course_credit
+        return sum/total_credit
+    # if option 1 is not clicked and course and semester tuples are empty
+    else:
+        sum=0
+        total_credit=0
+        for i in range(0,len(subject),4):
+            print("loop started")
+            print(subject[i:i+4])
+            (course_code,course_name,course_credit,course_grade_point)=subject[i:i+4]
+            print(course_code,course_name)
+            credits_gpa= course_credit*course_grade_point
+            sum=sum+credits_gpa
+            total_credit=total_credit+course_credit
+        return sum/total_credit
 
 
 
+def calculate_cgpa(subject,semester):
+    sem_gpa=calculate_semester_gpa(subject,semester)
 
 
 
@@ -50,11 +68,18 @@ while True:
     print("1. Input New Semester Results\n2. View Semester-wise GPA\n3.Calculate CGPA\n4. Generate Full Academic Transcript\n0. Exit")
     user=int(input("Enter Your Choice:"))
     if user==1:
-        print("Semester Record:",semester_record)
-        course_tuple,semester_record=add_semester_record(course_tuple,semester_record)
-        print("Courses are:",course_tuple,"Semester Record:",semester_record)
+        while True:
+            print("Semester Record:",semester_record)
+            course_tuple,semester_record=add_semester_record(course_tuple,semester_record)
+            print("Courses are:",course_tuple,"Semester Record:",semester_record)
+            answer=input("Do you want to add more semester?(Yes/No):")
+            if answer=="yes":
+                continue
+            else:
+                break
     elif user==2:
-        calculate_semester_cgpa(course_tuple,semester_record)
+        GPA=calculate_semester_gpa(course_tuple,semester_record)
+        print("Semester GPA:",GPA)
     elif user==3:
         calculate_cgpa(course_tuple,semester_record)
     elif user==4:
