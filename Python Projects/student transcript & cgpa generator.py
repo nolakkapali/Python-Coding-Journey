@@ -22,23 +22,11 @@ def add_semester_record(subject,semester):
 #2)Calculate semester gpa
 def calculate_semester_gpa(subject,semester):
     # if option 1 is already clicked and the semster record and course tuples are empty
-    if course_tuple is None and semester_record is None:
-        updated_sub,updated_sem=add_semester_record(subject,semester)
-        sum=0
-        total_credit=0
-#Courses are: ('121', 'dg', 3.0, 4.0, '213', 'dgd', 3.0, 4.0)
-#Semester Record: (1, ('121', 'dg', 3.0, 4.0, '213', 'dgd', 3.0, 4.0))
-        for i in range(0,len(updated_sub),4):
-            print("loop started")
-            print(updated_sub[i:i+4])
-            (course_code,course_name,course_credit,course_grade_point)=updated_sub[i:i+4]
-            print(course_code,course_name)
-            credits_gpa= course_credit*course_grade_point
-            sum=sum+credits_gpa
-            total_credit=total_credit+course_credit
-        return sum/total_credit
-    # if option 1 is not clicked and course and semester tuples are empty
-    else:
+    sem_num=int(input(("Which semester GPA Do u want to calculate:")))
+    print("Courses are:",subject,"Semester Records:",semester)
+    if sem_num in semester:
+    # if option 1 is clicked and course and semester tuples are full and semester number is also in the semester tuple
+
         sum=0
         total_credit=0
         for i in range(0,len(subject),4):
@@ -51,13 +39,40 @@ def calculate_semester_gpa(subject,semester):
             total_credit=total_credit+course_credit
         return sum/total_credit
 
+    # if option 1 is not clicked and course and semester tuples are empty
+    elif course_tuple is None and semester_record is None or sem_num not in semester:
+        print("If your desired semester info are not added")
+        print("Please add the semester and coures record before the GPA calculation-")
+
+        while True:
+            updated_sub,updated_sem=add_semester_record(subject,semester)
+            if sem_num in updated_sem:
+                sum=0
+                total_credit=0
+    #Courses are: ('121', 'dg', 3.0, 4.0, '213', 'dgd', 3.0, 4.0)
+    #Semester Record: (1, ('121', 'dg', 3.0, 4.0, '213', 'dgd', 3.0, 4.0))
+                for i in range(0,len(updated_sub),4):
+                    print("loop started")
+                    print(updated_sub[i:i+4])
+                    (course_code,course_name,course_credit,course_grade_point)=updated_sub[i:i+4]
+                    print(course_code,course_name)
+                    credits_gpa= course_credit*course_grade_point
+                    sum=sum+credits_gpa
+                    total_credit=total_credit+course_credit
+                break
+            else:
+                print("Sorry selected semester not added.Please add it again")
+                continue
+
+        return sum/total_credit
+
+
+
+
 
 
 def calculate_cgpa(subject,semester):
     sem_gpa=calculate_semester_gpa(subject,semester)
-
-
-
 
 
 
