@@ -7,14 +7,18 @@ def add_semester_record(subject,semester):
 
     semester_num=int(input("Enter Semester No-"))
     course_num=int(input("How many courses are there-"))
-
-    for i in range(course_num):
+    i=0
+    while i<course_num:
         course_code=input("Enter Course Code-")
         course_name=input("Enter Course Name-")
         course_credit=float(input("Enter Course Credit-"))
         course_grade_point=float(input("Enter Course Grade Point- "))
         sub=(course_code,course_name,course_credit,course_grade_point)
         subject=subject+sub
+        if course_code in subject or course_name in subject:
+            print("The values are duplicate.please add it again!")
+            continue
+        i=i+1
     print(subject)
     semester=(semester_num,subject)
     return subject,semester
