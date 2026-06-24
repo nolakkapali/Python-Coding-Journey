@@ -14,16 +14,16 @@ def add_semester_record(subject,semester):
         course_credit=float(input("Enter Course Credit-"))
         course_grade_point=float(input("Enter Course Grade Point- "))
         sub=(course_code,course_name,course_credit,course_grade_point)
-        subject=subject+sub
         if course_code in subject or course_name in subject:
             print("The values are duplicate.please add it again!")
             continue
+        subject=subject+sub
         i=i+1
     print(subject)
     semester=(semester_num,subject)
     return subject,semester
 
-#2)Calculate semester gpa
+#2)Calculate semester gp
 def calculate_semester_gpa(subject,semester):
     # if option 1 is already clicked and the semster record and course tuples are empty
     sem_num=int(input(("Which semester GPA Do u want to calculate:")))
@@ -76,7 +76,26 @@ def calculate_semester_gpa(subject,semester):
 
 
 def calculate_cgpa(subject,semester):
-    sem_gpa=calculate_semester_gpa(subject,semester)
+    while True:
+        sem_sub,sem_rec=add_semester_record(subject,semester)
+        answer=input("Do you want to add more semester?(Yes/No):")
+        if answer=="Yes":
+            continue
+        else:
+            break
+
+    sum=0
+    total_credit=0
+    for i in range(0,len(sem_rec)):# ekane semester record nite hbe karon buja jacche na kon subject kon semester er
+        print("loop started")
+        print(sem_rec[i:i+4])
+        (course_code,course_name,course_credit,course_grade_point)=sem_rec[i:i+4]
+        print(course_code,course_name)
+        credits_gpa= course_credit*course_grade_point
+        sum=sum+credits_gpa
+        total_credit=total_credit+course_credit
+    cgpa=sum/total_credit
+    print(cgpa)
 
 
 
@@ -92,7 +111,7 @@ while True:
             course_tuple,semester_record=add_semester_record(course_tuple,semester_record)
             print("Courses are:",course_tuple,"Semester Record:",semester_record)
             answer=input("Do you want to add more semester?(Yes/No):")
-            if answer=="yes":
+            if answer=="Yes":
                 continue
             else:
                 break
