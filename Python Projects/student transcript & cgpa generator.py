@@ -95,7 +95,7 @@ def calculate_cgpa(subject,semester):
         sum=sum+credits_gpa
         total_credit=total_credit+course_credit
     cgpa=sum/total_credit
-    print(cgpa)
+    print("Your all semester cgpa is",cgpa)
 
 
 
