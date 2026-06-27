@@ -120,6 +120,7 @@ while True:
         print("Semester GPA:",GPA)
     elif user==3:
         calculate_cgpa(course_tuple,semester_record)
+        print("All Semester CGPA id published!")
     elif user==4:
         calculate_academic_transcript(course_tuple,semester_record)
     else:
