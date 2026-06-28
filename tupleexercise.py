@@ -88,3 +88,9 @@ while i<len(thistuple):
 for i in range(len(thistuple)):
     print("333333333")
     print(thistuple[i])
+
+m=(1,(2,3,4,5),45,(23,45,44,3),56,(556))
+i=0
+while i < len(m):
+    print(i)
+    i=2*i+1
