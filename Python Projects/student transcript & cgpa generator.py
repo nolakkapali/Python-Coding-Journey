@@ -86,18 +86,18 @@ def calculate_cgpa(subject,semester):
 
     sum=0
     total_credit=0
-    i=0
-    while(i<len(sem_rec)):# ekane semester record nite hbe karon buja jacche na kon subject kon semester er
+    print(sem_rec)
+    for i in range(1,len(sem_rec),2):# ekane semester record nite hbe karon buja jacche na kon subject kon semester er
         print("loop started")
-        print(sem_rec[i:i+4])
-        (course_code,course_name,course_credit,course_grade_point)=sem_rec[i:i+4]
+        print(sem_rec[i])
+        (course_code,course_name,course_credit,course_grade_point)=sem_rec[i]
         print(course_code,course_name)
-        credits_gpa= course_credit*course_grade_point
-        sum=sum+credits_gpa
-        total_credit=total_credit+course_credit
-        i=i+2
-    cgpa=sum/total_credit
-    print("Your all semester cgpa is",cgpa)
+    #     credits_gpa= course_credit*course_grade_point
+    #     sum=sum+credits_gpa
+    #     total_credit=total_credit+course_credit
+    #     i=i+2
+    # cgpa=sum/total_credit
+    # print("Your all semester cgpa is",cgpa)
 
 
 

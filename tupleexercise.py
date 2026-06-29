@@ -90,7 +90,9 @@ for i in range(len(thistuple)):
     print(thistuple[i])
 
 m=(1,(2,3,4,5),45,(23,45,44,3),56,(556))
-i=0
-while i < len(m):
-    print(i)
-    i=2*i+1
+# i=1
+# while i <len(m):
+#     print(m[i])
+#     i=2*i+1
+for i in range(1,len(m),2):
+    print(m[i])
