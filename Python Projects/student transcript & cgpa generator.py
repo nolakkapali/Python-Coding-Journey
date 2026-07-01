@@ -20,7 +20,8 @@ def add_semester_record(subject,semester):
         subject=subject+sub
         i=i+1
     print(subject)
-    semester=(semester_num,subject)
+    current_sem=(semester_num,subject)
+    semester=semester+current_sem
     return subject,semester
 
 #2)Calculate semester gp
@@ -30,13 +31,13 @@ def calculate_semester_gpa(subject,semester):
     print("Courses are:",subject,"Semester Records:",semester)
     if sem_num in semester:
     # if option 1 is clicked and course and semester tuples are full and semester number is also in the semester tuple
-
         sum=0
         total_credit=0
-        for i in range(0,len(subject),4):
-            print("loop started")
-            print(subject[i:i+4])
-            (course_code,course_name,course_credit,course_grade_point)=subject[i:i+4]
+        gpa_tuple=semester[semester.index(sem_num)+1]
+        print(gpa_tuple)
+        print("loop started")
+        for j in range(0,len(gpa_tuple),4):
+            (course_code,course_name,course_credit,course_grade_point)=gpa_tuple[j:j+4]
             print(course_code,course_name)
             credits_gpa= course_credit*course_grade_point
             sum=sum+credits_gpa
@@ -79,25 +80,23 @@ def calculate_cgpa(subject,semester):
     while True:
         sem_sub,sem_rec=add_semester_record(subject,semester)
         answer=input("Do you want to add more semester?(Yes/No):")
-        if answer=="Yes":
+        if answer =="Yes" or answer =="yes":
             continue
         else:
             break
 
     sum=0
     total_credit=0
-    print(sem_rec)
-    for i in range(1,len(sem_rec),2):# ekane semester record nite hbe karon buja jacche na kon subject kon semester er
+    for i in range(1,len(semester),2):
         print("loop started")
-        print(sem_rec[i])
-        (course_code,course_name,course_credit,course_grade_point)=sem_rec[i]
-        print(course_code,course_name)
-    #     credits_gpa= course_credit*course_grade_point
-    #     sum=sum+credits_gpa
-    #     total_credit=total_credit+course_credit
-    #     i=i+2
-    # cgpa=sum/total_credit
-    # print("Your all semester cgpa is",cgpa)
+        print(semester[i])
+        for j in range(0,len(semester[i]),4):
+            (course_code,course_name,course_credit,course_grade_point)=semester[i][j:j+4]
+            print(course_code,course_name)
+            credits_gpa= course_credit*course_grade_point
+            sum=sum+credits_gpa
+            total_credit=total_credit+course_credit
+        return sum/total_credit
 
 
 
@@ -113,7 +112,7 @@ while True:
             course_tuple,semester_record=add_semester_record(course_tuple,semester_record)
             print("Courses are:",course_tuple,"Semester Record:",semester_record)
             answer=input("Do you want to add more semester?(Yes/No):")
-            if answer=="Yes":
+            if answer =="Yes" or answer == "yes":
                 continue
             else:
                 break
