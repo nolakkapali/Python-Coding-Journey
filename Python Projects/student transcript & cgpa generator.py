@@ -4,10 +4,11 @@ semester_record=()
 
 #1)add_semester_record()--
 def add_semester_record(subject,semester):
-
     semester_num=int(input("Enter Semester No-"))
     course_num=int(input("How many courses are there-"))
     i=0
+    current_subject=()
+    current_sem=()
     while i<course_num:
         course_code=input("Enter Course Code-")
         course_name=input("Enter Course Name-")
@@ -17,10 +18,16 @@ def add_semester_record(subject,semester):
         if course_code in subject or course_name in subject:
             print("The values are duplicate.please add it again!")
             continue
-        subject=subject+sub
+        #to hold the value for current semester subject
+        current_subject=current_subject+sub
         i=i+1
-    print(subject)
-    current_sem=(semester_num,subject)
+
+    print(current_subject)
+    #adding the current subject value to the previous semester's subjects
+    subject=subject+current_subject
+    #for creating tuple for temporary to hold this current semester result
+    current_sem=(semester_num,current_subject)
+    #for adding the current semester result to the past semester result(ex.2nd semester+1st semester)
     semester=semester+current_sem
     return subject,semester
 
@@ -72,11 +79,9 @@ def calculate_semester_gpa(subject,semester):
         return sum/total_credit
 
 
-
-
-
-
+#all the semester cgpa is calculated
 def calculate_cgpa(subject,semester):
+    # if course_tuple is None and semester_record is None:
     while True:
         sem_sub,sem_rec=add_semester_record(subject,semester)
         answer=input("Do you want to add more semester?(Yes/No):")
@@ -85,7 +90,9 @@ def calculate_cgpa(subject,semester):
         else:
             break
 
-    sum=0
+    current_sum=0
+    current_total_credit=0
+    total_sum=0
     total_credit=0
     for i in range(1,len(semester),2):
         print("loop started")
@@ -94,9 +101,12 @@ def calculate_cgpa(subject,semester):
             (course_code,course_name,course_credit,course_grade_point)=semester[i][j:j+4]
             print(course_code,course_name)
             credits_gpa= course_credit*course_grade_point
-            sum=sum+credits_gpa
-            total_credit=total_credit+course_credit
-        return sum/total_credit
+            current_sum=current_sum+credits_gpa
+            current_total_credit=current_total_credit+course_credit
+        total_sum=total_sum+current_sum
+        total_credit=total_credit+current_total_credit
+        print (total_sum/total_credit)
+        return total_sum/total_credit
 
 
 
@@ -121,9 +131,10 @@ while True:
         print("Semester GPA:",GPA)
         print("GPA is published!")
     elif user==3:
-        calculate_cgpa(course_tuple,semester_record)
-        print("All Semester CGPA is published!")
+        CGPA=calculate_cgpa(course_tuple,semester_record)
+        print("All Semester CGPA is published!",CGPA)
     elif user==4:
         calculate_academic_transcript(course_tuple,semester_record)
+        print("transcript is published!")
     else:
         break
